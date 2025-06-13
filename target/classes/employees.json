@@ -1,5 +1,4 @@
 [
-    { "id": "1", "name": "Alice", "position": "Developer" },
-    { "id": "2", "name": "Bob", "position": "Manager" },
-    { "id": "3", "name": "Charlie", "position": "Tester" }
+  { "id": 1, "name": "Nguyen Van A", "department": "HR" },
+  { "id": 2, "name": "Tran Thi B", "department": "IT" }
 ]
