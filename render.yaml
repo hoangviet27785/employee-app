@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: employee-app
+    env: java
+    plan: free
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/employee-app-1.0.0.jar"
+    repo: https://github.com/YOUR_USERNAME/employee-app
+    branch: master
