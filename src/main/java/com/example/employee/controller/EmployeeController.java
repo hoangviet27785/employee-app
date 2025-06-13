@@ -18,6 +18,7 @@ public class EmployeeController {
     public String getEmployees(Model model) throws Exception {
         List<Employee> employees = employeeService.getAllEmployees();
         model.addAttribute("employees", employees);
+        System.out.println("Loaded employees: " + employees.size());
         return "employees"; // tên file HTML trong thư mục templates (employees.html)
     }
 }
