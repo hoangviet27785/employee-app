@@ -11,10 +11,9 @@ import java.io.InputStream;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
 public class EmployeeController {
 
-    @GetMapping
+    @GetMapping("/employees")
     public String getEmployees(Model model) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         InputStream inputStream = new ClassPathResource("employees.json").getInputStream();
