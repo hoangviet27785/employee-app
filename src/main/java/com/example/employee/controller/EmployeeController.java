@@ -10,12 +10,14 @@ import org.springframework.ui.Model;
 import java.util.List;
 
 @RestController
+@RequestMapping("/employees")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/employees")
+    @GetMapping("/")
     public String getEmployees(Model model) throws Exception {
+        System.out.println("Get employees...");
         List<Employee> employees = employeeService.getAllEmployees();
         model.addAttribute("employees", employees);
         System.out.println("Loaded employees: " + employees.size());
