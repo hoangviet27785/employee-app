@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 import java.io.InputStream;
 import java.util.List;
@@ -14,9 +15,11 @@ import java.util.List;
 public class EmployeeController {
 
     @GetMapping
-    public List<Employee> getEmployees() throws Exception {
+    public String getEmployees(Model model) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         InputStream inputStream = new ClassPathResource("employees.json").getInputStream();
-        return mapper.readValue(inputStream, new TypeReference<List<Employee>>() {});
+        List<Employee> employees = mapper.readValue(inputStream, new TypeReference<List<Employee>>() {});
+        model.addAttribute("employees", employees);
+        return "employees"; // tên file HTML trong thư mục templates (employees.html)
     }
 }
